@@ -2,10 +2,15 @@ require "sinatra"
 require "sinatra/reloader"
 
 get("/") do
-  "<a href='/dice/2/6'>Roll two 6-sided die</a>"
-  "<a href='/dice/2/10'>Roll two 10-sided die</a>"
-  "<a href='/dice/1/20'>Roll one 20-sided die</a>"
-  "<a href='/dice/5/4'>Roll five 4-sided die</a>"
+  "
+  <h1> Dice Roll </h1>
+  <ul>
+    <li><a href='/dice/2/6'>Roll two 6-sided die</a></li>
+    <li><a href='/dice/2/10'>Roll two 10-sided die</a></li>
+    <li><a href='/dice/1/20'>Roll one 20-sided die</a></li>
+    <li><a href='/dice/5/4'>Roll five 4-sided die</a></li>
+  </ul>
+  "
 end
 
 get("/dice/2/6") do
@@ -31,7 +36,7 @@ get("/dice/2/10") do
 end
 
 get("/dice/1/20") do
-  first_die = rand(1..10)
+  first_die = rand(1..20)
   outcome = "You rolled a #{first_die} for a total of #{first_die}"
 
   "<h1>1d20</h1>
